@@ -1,0 +1,24 @@
+name: Deploy github pages?
+
+on:
+  push:
+    branches: [main]
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install Tailwind CLI
+        run: npm install -D @tailwindcss/cli
+
+      - name: Build CSS
+        run: npx tailwindcss -i ./src/styles.css -o ./src/output.css
