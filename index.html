@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html lang="en">
 
 <head>
 	<meta charset="UTF-8">
@@ -42,11 +42,11 @@
 	</div>
 	<div class="flex flex-row w-fit my-3">
 		<div>
-			<img src="./src/blahaj.gif?e=e" />
+			<img src="./src/blahaj.gif?e=e" alt="Spinning Blåhaj plush"/>
 		</div>
 		<div>
 
-			<img src="./src/elephpant.png" width="350px" class="spin-3d" />
+			<img src="./src/elephpant.png" width="350px" class="spin-3d" alt="Spinning elephpant plush, the mascot of PHP."/>
 
 		</div>
 	</div>
@@ -57,11 +57,88 @@
 	<span>(and then make sure to join <a class="text-[#AEB2D5]"
 			href="https://app.slack.com/client/T0266FRGM/C0986C56KNV">#phpawesome</a>
 		in slack or you'll miss out on exciting updates!) </span>
-
-
+	<br>
 	<!-- examples of projects -->
+	<h2 class="text-4xl font-bold text-[#AEB2D5] font-shantell-sans mt-10">Stuck for <span class="underline decoration-wavy decoration-4">ideas</span>?</h2>
+	<br>
+	<button class="p-4 rounded-lg text-xl outline-2 outline-[#484C89] bg-[#1F213A] block w-fit mb-4 cursor-pointer transition duration-300 ease-in-out hover:bg-[#161729]" id="generate-idea">Generate Idea</button>
+	<script>
+		function sleep(ms) {
+			return new Promise(resolve => setTimeout(resolve, ms));
+		}
+		function getRandomUnsignedInteger(max) {
+			return Math.floor(Math.random() * max);
+		}
+		function getRandomSignedInteger(min, max) {
+			return Math.floor(Math.random() * (max - min + 1)) + min;
+		}
+		function createLightBeam(colourHex) {
+			let lightBeam = document.createElement('div');
+			lightBeam.className = 'h-dvh w-24 fixed top-0 z-102 light-beam';
+			lightBeam.style.backgroundColor = '#' + colourHex;
+			lightBeam.style.left = getRandomUnsignedInteger(window.innerWidth - 50) + 'px';
+			document.body.appendChild(lightBeam);
+		}
+		function createHorizontalLightBeam(colourHex) {
+			let lightBeam = document.createElement('div');
+			lightBeam.className = 'h-24 w-screen fixed left-0 z-102 horizontal-light-beam';
+			lightBeam.style.backgroundColor = '#' + colourHex;
+			lightBeam.style.top = getRandomUnsignedInteger(window.innerHeight - 50) + 'px';
+			document.body.appendChild(lightBeam);
+		}
+		let validColours = ['FF0000A0', '00FF00A0', '0000FFA0', 'FFFF00A0', 'FF00FFA0', '00FFFFA0'];
+		// get ready for the SUPER DUPER CINEMATIC IDEA GENERATOR!!! WOOHOO!!!!!!!!!!! :D :D :3 :P ^_^ xD
+		let superCinematicSong = new Audio('src/462681_xKore_-_Event_Horizon.mp3');
+		superCinematicSong.preload = 'auto';
+		document.querySelector('#generate-idea').addEventListener('click', () => {
+			superCinematicSong.currentTime = 25;
+			superCinematicSong.play();
+			const blackBackground = document.createElement('div');
+			blackBackground.className = "fixed top-0 left-0 h-dvh w-screen bg-[#000] z-99 fade-in opacity-90";
+			document.body.appendChild(blackBackground);
+			const snailWrapper = document.createElement('div');
+			document.body.appendChild(snailWrapper);
+			const snail = document.createElement('img');
+			snail.src = 'src/snail.png';
+			snail.className = 'fixed -bottom-full left-1/2 -translate-x-1/2 translate-y-1/2 z-101';
+			snailWrapper.appendChild(snail);
+			sleep(5500).then(() => {
+				console.log('hi i\'m a snail');
+				snail.classList.add('snail-initial-animation');
+			});
+			sleep(9000).then(() => {
+				console.log('aaaah why am i stretching its so painful');
+				snail.classList.add('snail-stretch-animation', 'bottom-1/2');
+			});
+			sleep(11377).then(() => {
+				console.log('oooh fancy light show');
+				let count = 0;
+				let lightBeamLoop = setInterval(() => {
+					createLightBeam(validColours[getRandomUnsignedInteger(validColours.length)]);
+					count++;
+					if (count > 30) {
+						clearInterval(lightBeamLoop);
+					}
+				}, 353);
+			});
+			sleep(17024).then(() => {
+				console.log('woah the lights are going horizontally as well now. and at TWICE THE SPEED OMG');
+				let count = 0;
+				let horizontalLightBeamLoop = setInterval(() => {
+					createHorizontalLightBeam(validColours[getRandomUnsignedInteger(validColours.length)]);
+					count++;
+					if (count > 28) {
+						clearInterval(horizontalLightBeamLoop);
+					}
+				}, 176.5);
+			});
+			sleep(19675).then(() => {
+				
+			});
+		});
+	</script>
 	<!-- prize tiers -->
-        <!-- FAQs -->
+		<!-- FAQs -->
 	<!-- live RSVP count (use php for this! but will need to use vercel instead of gh pages) -->
 </body>
 
