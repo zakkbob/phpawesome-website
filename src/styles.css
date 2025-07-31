@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+:root {
+	--progress: 0;
+}
+
 .font-shantell-sans {
     font-family: "Shantell Sans", cursive;
     font-optical-sizing: auto;

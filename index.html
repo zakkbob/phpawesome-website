@@ -68,23 +68,76 @@
 		<h1
 			class="text-6xl text-[#AEB2D5] mb-8 font-bold font-shantell-sans  decoration-wavy decoration-4 md:decoration-3">
 			Prize Tiers</h1>
-		<div class="w-100 h-12 relative bg-[#484C89] rounded-md">
-			<div style="clip-path: inset(0 80% 0 0)"
-				class="text-xl w-full text-left p-4 h-12 align-top flex items-center absolute text-[#484C89] font-bold z-2">
+		<div class="w-128 h-12 relative bg-[#484C89] rounded-md overflow-clip" id="rsvp-bar">
+			<div style="clip-path: inset(0 calc((100 - var(--progress)) * 1%)) 0 0)"
+				class="text-xl w-full text-left p-4 h-12 align-top flex items-center absolute text-[#484C89] font-bold z-2 unlock-text">
 				Unlocks
 				after 100
 				RSVPs :D
 			</div>
-			<div style="clip-path: inset(0 0 0 20%)"
-				class="text-xl w-full text-left p-4 absolute text-[#AEB2D5] h-12 flex items-center font-bold z-2">
+			<div style="clip-path: inset(0 0 0 calc(var(--progress) * 1%))"
+				class="text-xl w-full text-left aria-hidden p-4 absolute text-[#AEB2D5] h-12 flex items-center font-bold z-2 unlock-text">
 				Unlocks after 100 RSVPs :D</div>
 
-			<div class="absolute w-[calc(25rem/5)] h-full bg-[#AEB2D5] rounded-md relative"></div>
-
+			<div
+				class="absolute w-[calc(32rem*var(--progress)/100)] h-full bg-[#AEB2D5] rounded-md relative">
+			</div>
 		</div>
-
-
 	</div>
+	<script>
+		function easeOutCubic(t) {
+			return 1 - Math.pow(1 - t, 3);
+		}
+
+		let start = null;
+		const rsvps = 20;
+		const duration = 2000;
+		const interval = 10;
+		let timeProgress = 0;
+
+		let unlockText = document.getElementsByClassName("unlock-text")
+
+		function setUnlockText(text) {
+			for (var i = 0; i < unlockText.length; i++) {
+				unlockText[i].innerText = text;
+			}
+		}
+
+		function stepProgress(timestamp) {
+			if (!start) {
+				start = timestamp;
+			}
+			const elapsed = timestamp - start;
+			const timeProgress = Math.min(elapsed / duration, 1);
+
+			console.log(easeOutCubic(timeProgress))
+
+			const progress = easeOutCubic(timeProgress) * rsvps
+
+			document.documentElement.style.setProperty("--progress", progress)
+			setUnlockText("Unlocks after 100 RSVPs :D (" + Math.round(progress) + " so far!)")
+
+
+
+			if (elapsed < duration) {
+				setTimeout(() => requestAnimationFrame(stepProgress), interval);
+			}
+		}
+
+		const rsvpBar = document.getElementById('rsvp-bar');
+
+		const observer = new IntersectionObserver((entries, observer) => {
+			entries.forEach(entry => {
+				if (entry.isIntersecting) {
+					requestAnimationFrame(stepProgress)
+
+					observer.unobserve(entry.target);
+				}
+			});
+		});
+
+		observer.observe(rsvpBar);
+	</script>
 
 	<!-- FAQs -->
 	<!-- live RSVP count (use php for this! but will need to use vercel instead of gh pages) -->
