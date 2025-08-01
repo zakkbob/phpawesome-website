@@ -86,6 +86,9 @@
 			lightBeam.style.top = getRandomUnsignedInteger(window.innerHeight - 50) + 'px';
 			document.body.appendChild(lightBeam);
 		}
+		const sendMeToTheMiddle = function() {
+
+		}
 		let validColours = ['FF0000A0', '00FF00A0', '0000FFA0', 'FFFF00A0', 'FF00FFA0', '00FFFFA0'];
 		// get ready for the SUPER DUPER CINEMATIC IDEA GENERATOR!!! WOOHOO!!!!!!!!!!! :D :D :3 :P ^_^ xD
 		let superCinematicSong = new Audio('src/462681_xKore_-_Event_Horizon.mp3');
@@ -121,6 +124,47 @@
 					}
 				}, 353);
 			});
+			let spawnParticlesLoop; // it exists now.
+			sleep(11377).then(() => {
+				console.log('and particles... cool. i wonder how long this took the developer to make');
+				let particleSrcs = ['src/particles/brain.png', 'src/particles/mateishomepage.png', 'src/particles/puzzle_solved.png'];
+				if (window.innerWidth > window.innerHeight) {
+					const spawnFromDistance = window.innerWidth;
+				} else {
+					const spawnFromDistance = window.innerHeight;
+				}
+				spawnParticlesLoop = setInterval(() => {
+					let particle = document.createElement('img');
+					particle.src = particleSrcs[getRandomUnsignedInteger(particleSrcs.length)];
+					console.log('hi i\'m a particle');
+					let fromWhichSide = getRandomUnsignedInteger(3);
+					let startTop, startLeft;
+					let centerTop = window.innerHeight / 2;
+					let centerLeft = window.innerWidth / 2;
+					if (fromWhichSide === 0) { // left side :3
+						startLeft = -100;
+						startTop = getRandomUnsignedInteger(window.innerHeight);
+					} else if (fromWhichSide === 1) { // right side :p
+						startLeft = window.innerWidth + 100;
+						startTop = getRandomUnsignedInteger(window.innerHeight);
+					} else if (fromWhichSide === 2) { // top side ^_^
+						startTop = -100;
+						startLeft = getRandomUnsignedInteger(window.innerWidth);
+					} else { // bottom side :P
+						startTop = window.innerHeight + 100;
+						startLeft = getRandomUnsignedInteger(window.innerWidth);
+					}
+					particle.className = 'fixed z-100 particle';
+					particle.style.top = startTop + 'px';
+					particle.style.left = startLeft + 'px';
+					document.body.appendChild(particle);
+					setTimeout(() => {
+						particle.style.transition = 'top 2.5s linear, left 2.5s linear';
+						particle.style.top = centerTop + 'px';
+						particle.style.left = centerLeft + 'px';
+					}, 10);
+				}, 25);
+			});
 			sleep(17024).then(() => {
 				console.log('woah the lights are going horizontally as well now. and at TWICE THE SPEED OMG');
 				let count = 0;
@@ -132,8 +176,17 @@
 					}
 				}, 176.5);
 			});
-			sleep(19675).then(() => {
-				
+			sleep(22200).then(() => {
+				clearInterval(spawnParticlesLoop);
+				let particles = Array.from(document.querySelectorAll('.particle'));
+				console.log('dam i spawned ' + particles.length + ' particles :O ok they\'re all going away now cya');
+				particles.forEach((particle) => {
+					particle.remove();
+				});
+				let lightBeams = Array.from(document.querySelectorAll('.light-beam')).concat(Array.from(document.querySelectorAll('.horizontal-lightbeam')));
+				lightBeams.forEach((beam) => {
+					beam.remove();
+				})
 			});
 		});
 	</script>
