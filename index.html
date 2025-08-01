@@ -165,7 +165,7 @@
 					}, 10);
 				}, 25);
 			});
-			sleep(17024).then(() => {
+			sleep(16847).then(() => {
 				console.log('woah the lights are going horizontally as well now. and at TWICE THE SPEED OMG');
 				let count = 0;
 				let horizontalLightBeamLoop = setInterval(() => {
@@ -176,6 +176,11 @@
 					}
 				}, 176.5);
 			});
+			fetch('src/ideas.json')
+				.then(response => response.text())
+				.then(data => {
+					window.ideasJSON = data;
+				});
 			sleep(22200).then(() => {
 				clearInterval(spawnParticlesLoop);
 				let particles = Array.from(document.querySelectorAll('.particle'));
@@ -183,10 +188,47 @@
 				particles.forEach((particle) => {
 					particle.remove();
 				});
-				let lightBeams = Array.from(document.querySelectorAll('.light-beam')).concat(Array.from(document.querySelectorAll('.horizontal-lightbeam')));
+				let lightBeams = Array.from(document.querySelectorAll('.light-beam'));
 				lightBeams.forEach((beam) => {
 					beam.remove();
 				})
+				let horizontalLightBeams = Array.from(document.querySelectorAll('.horizontal-light-beam'));
+				horizontalLightBeams.forEach((beam) => {
+					beam.remove();
+				})
+				let epicFireGif = document.createElement('img');
+				epicFireGif.src = 'src/fire.gif';
+				epicFireGif.className = 'fixed left-0 bottom-0 w-screen h-1/2 z-99';
+				epicFireGif.style.objectFit = 'fill';
+				document.body.appendChild(epicFireGif);
+				// now... for the idea
+				const ideas = JSON.parse(ideasJSON);
+				const idea = ideas[getRandomUnsignedInteger(ideas.length)];
+				console.log(idea);
+				let ideaText = document.createElement('div');
+				ideaText.innerText = idea;
+				ideaText.className = "fixed z-100 font-shantell-sans text-5xl top-4/5 text-[#787AFA] font-bold";
+				document.body.appendChild(ideaText);
+				let instructionalText = document.createElement('div');
+				instructionalText.innerText = 'Press [ESC] or click on the snail to close.';
+				instructionalText.className = 'text-xl';
+				ideaText.appendChild(instructionalText);
+				snail.addEventListener('click', (() => {
+					snailWrapper.remove();
+					blackBackground.remove();
+					ideaText.remove();
+					epicFireGif.remove();
+					superCinematicSong.pause();
+				}));
+				document.addEventListener('keydown', function(event) {
+					if (event.key === "Escape") {
+						snailWrapper.remove();
+						blackBackground.remove();
+						ideaText.remove();
+						epicFireGif.remove();
+						superCinematicSong.pause();
+					}
+				});
 			});
 		});
 	</script>
