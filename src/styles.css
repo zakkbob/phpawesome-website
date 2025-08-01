@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+:root {
+	--progress: 0;
+}
+
 .font-shantell-sans {
     font-family: "Shantell Sans", cursive;
     font-optical-sizing: auto;
@@ -13,7 +17,7 @@
 .font-nunito {
   font-family: "Nunito", sans-serif;
   font-optical-sizing: auto;
-  font-weight: <weight>;
+  font-weight: 500;
   font-style: normal;
 }
 
