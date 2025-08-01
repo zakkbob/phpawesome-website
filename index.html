@@ -1,422 +1,509 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Shantell+Sans:wght,INFM@300..800,30&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+      rel="stylesheet"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-	<meta charset="UTF-8">
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
-		rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css2?family=Shantell+Sans:wght,INFM@300..800,30&amp;display=swap"
-		rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
-		rel="stylesheet">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="PHPAwesome" />
+    <meta
+      name="description"
+      content="Make a PHP web app, get a free plushie! (Your choice of either a Blåhaj or Elephpant)"
+    />
 
-	<meta name="title" content="PHPAwesome" />
-	<meta name="description"
-		content="Make a PHP web app, get a free plushie! (Your choice of either a Blåhaj or Elephpant)" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="PHPAwesome" />
+    <meta
+      property="og:description"
+      content="Make a PHP web app, get a free plushie! (Your choice of either a Blåhaj or Elephpant)"
+    />
+    <meta
+      property="og:image"
+      content="https://phpawesome.zakkbob.dev/src/assets/blahaj.gif"
+    />
 
-	<meta property="og:type" content="website" />
-	<meta property="og:title" content="PHPAwesome" />
-	<meta property="og:description"
-		content="Make a PHP web app, get a free plushie! (Your choice of either a Blåhaj or Elephpant)" />
-	<meta property="og:image" content="https://phpawesome.zakkbob.dev/src/blahaj.gif" />
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:title" content="PHPAwesome" />
+    <meta
+      property="twitter:description"
+      content="Make a PHP web app, get a free plushie! (Your choice of a Blåhaj or Elephpant)"
+    />
+    <meta
+      property="twitter:image"
+      content="https://phpawesome.zakkbob.dev/src/assets/blahaj.gif"
+    />
 
-	<meta property="twitter:card" content="summary_large_image" />
-	<meta property="twitter:title" content="PHPAwesome" />
-	<meta property="twitter:description"
-		content="Make a PHP web app, get a free plushie! (Your choice of a Blåhaj or Elephpant)" />
-	<meta property="twitter:image" content="https://phpawesome.zakkbob.dev/src/blahaj.gif" />
+    <link href="./src/output.css" rel="stylesheet" />
+  </head>
 
-	<link href="./src/output.css" rel="stylesheet">
-</head>
+  <body
+    class="bg-[#0F1124] text-white m-8 text-center font-nunito flex flex-col items-center gap-64"
+  >
+    <div class="flex flex-col items-center">
+      <h1
+        class="text-6xl text-[#AEB2D5] mb-8 font-bold font-shantell-sans relative"
+      >
+        PHP<span
+          class="underline text-transparent text-[#7e3434] decoration-wavy decoration-4 md:decoration-3 underline-offset-8 select-none aria-hidden"
+          id="boring-text"
+          >Awesome</span
+        >
+        <div
+          class="absolute right-0 top-0 underline decoration-wavy decoration-4 md:decoration-3 underline-offset-8"
+          id="awesome-text"
+        >
+          Awesome
+        </div>
+      </h1>
+      <div class="text-lg">
+        You Ship: <span class="text-[#AEB2D5]">A PHP web app</span>
+      </div>
+      <div class="text-lg">
+        We Ship:
+        <span class="text-[#AEB2D5]">A plushie (A Blåhaj or Elephpant)</span>
+      </div>
+      <div class="flex flex-row w-fit my-3">
+        <div>
+          <img src="./src/assets/blahaj.gif" alt="Spinning Blåhaj plush" />
+        </div>
+        <div>
+          <img
+            src="./src/assets/elephpant.png"
+            alt="Spinning elephpant plush, the mascot of PHP."
+            width="350px"
+            class="spin-3d"
+          />
+        </div>
+      </div>
 
-<body class="bg-[#0F1124] text-white m-8 text-center font-nunito flex flex-col items-center gap-32">
-	<div class="flex flex-col items-center">
-		<h1 class="text-6xl text-[#AEB2D5] mb-8 font-bold font-shantell-sans relative">PHP<span
-				class="underline text-transparent text-[#7e3434] decoration-wavy decoration-4 md:decoration-3 underline-offset-8 select-none aria-hidden"
-				id="boring-text">Awesome</span>
-			<div class="absolute  right-0 top-0 underline decoration-wavy decoration-4 md:decoration-3 underline-offset-8
-				" id="awesome-text"">Awesome</div>
-		</h1>
-		<div class=" text-lg">You Ship: <span class="text-[#AEB2D5]">A PHP web
-					app</span></div>
-			<div class="text-lg">We Ship: <span class="text-[#AEB2D5]">A plushie (A Blåhaj or
-					Elephpant)</span>
-			</div>
-			<div class="flex flex-row w-fit my-3">
-				<div>
-					<img src="./src/blahaj.gif" alt="Spinning Blåhaj plush" />
-				</div>
-				<div>
+      <a
+        href="https://forms.fillout.com/t/7ZK4AcCGfFus "
+        class="p-4 rounded-lg text-xl bg-[#484C89] transition duration-200 hover:bg-[#696db0] block w-fit mb-4"
+        >RSVP Now!</a
+      >
+      <span
+        >(and then make sure to join
+        <a
+          class="text-[#AEB2D5]"
+          href="https://app.slack.com/client/T0266FRGM/C0986C56KNV"
+          >#phpawesome</a
+        >
+        in slack or you'll miss out on exciting updates!)
+      </span>
+    </div>
+    <script>
+      const boringText = document.getElementById("boring-text");
+      const awesomeText = document.getElementById("awesome-text");
+      awesomeText.addEventListener("mousedown", (e) => {
+        if (e.detail >= 2) {
+          e.preventDefault(); // prevents double-click default behavior
+          setTimeout(() => {
+            window.getSelection().removeAllRanges();
+          }, 0);
+        }
+      });
+      let step = 0;
+      let animation = [
+        [1, 0, 0],
+        [2, 1, 1],
+        [4, 1, -1],
+        [7, -1, 1],
+        [10, -1, -2],
+        [18, -2, 2],
+        [22, -3, -3],
+        [27, -3, 3],
+        [34, -2, -3],
+        [40, -2, 2],
+        [50, 10, -7],
+      ];
+      // clik click, mine
+      function awesome() {
+        awesomeText.style.top = animation[step][0] + "px";
+        awesomeText.style.right = animation[step][1] + "px";
+        awesomeText.style.transform = "rotate(" + animation[step][2] + "deg)";
+        if (step < animation.length - 1) {
+          step++;
+        } else {
+          // woah, its about to fall!!!
+          requestAnimationFrame(epicFall);
+        }
+      }
+      awesomeText.addEventListener("click", awesome);
 
-					<img src="./src/elephpant.png"
-						alt="Spinning elephpant plush, the mascot of PHP." width="350px"
-						class="spin-3d" />
+      let yAcceleration = 0.01;
+      let xAcceleration = 0;
+      let xPos = animation[animation.length - 1][1];
+      let yPos = animation[animation.length - 1][0];
+      let prevXPos = xPos - 140;
+      let prevYPos = yPos;
+      let rotate = 0;
 
-				</div>
-			</div>
+      let prevTime = null;
 
-			<a href="https://forms.fillout.com/t/7ZK4AcCGfFus "
-				class="p-4 rounded-lg text-xl bg-[#484C89] transition duration-200 hover:bg-[#696db0] block w-fit mb-4">RSVP
-				Now!</a>
-			<span>(and then make sure to join <a class="text-[#AEB2D5]"
-					href="https://app.slack.com/client/T0266FRGM/C0986C56KNV">#phpawesome</a>
-				in slack or you'll miss out on exciting updates!) </span>
-	</div>
-	<script>
-		const boringText = document.getElementById("boring-text")
-		const awesomeText = document.getElementById("awesome-text")
-		awesomeText.addEventListener('mousedown', (e) => {
-			if (e.detail >= 2) {
-				e.preventDefault(); // prevents double-click default behavior
-				setTimeout(() => {
-					window.getSelection().removeAllRanges();
-				}, 0);
-			}
-		});
-		let step = 0;
-		let animation = [
-			[1, 0, 0],
-			[2, 1, 1],
-			[4, 1, -1],
-			[7, -1, 1],
-			[10, -1, -2],
-			[18, -2, 2],
-			[22, -3, -3],
-			[27, -3, 3],
-			[34, -2, -3],
-			[40, -2, 2],
-			[50, 10, -7],
-		]
-		// clik click, mine
-		function awesome() {
-			awesomeText.style.top = animation[step][0] + "px";
-			awesomeText.style.right = animation[step][1] + "px";
-			awesomeText.style.transform = "rotate(" + animation[step][2] + "deg)";
-			if (step < animation.length - 1) {
-				step++;
-			} else { // woah, its about to fall!!!
-				requestAnimationFrame(epicFall)
-			}
-		}
-		awesomeText.addEventListener("click", awesome);
+      function epicFall(timestamp) {
+        if (!prevTime) {
+          prevTime = timestamp;
+        }
+        const dt = timestamp - prevTime;
+        prevTime = timestamp;
 
-		let yAcceleration = 0.01;
-		let xAcceleration = 0;
-		let xPos = animation[animation.length - 1][1];
-		let yPos = animation[animation.length - 1][0];
-		let prevXPos = xPos - 140;
-		let prevYPos = yPos;
-		let rotate = 0;
+        boundingBox = awesomeText.getBoundingClientRect();
+        if (boundingBox.x <= 0) {
+          xPos -= boundingBox.x;
+          prevXPos = xPos + 160;
+        }
 
-		let prevTime = null;
+        if (boundingBox.x + awesomeText.offsetWidth >= window.screen.width) {
+          xPos += boundingBox.x + awesomeText.offsetWidth - window.screen.width;
+          prevXPos = xPos - 180;
+        }
 
-		function epicFall(timestamp) {
-			if (!prevTime) {
-				prevTime = timestamp;
-			}
-			const dt = timestamp - prevTime
-			prevTime = timestamp;
+        const tempY = yPos;
+        const tempX = xPos;
+        yPos = 2 * yPos - prevYPos + yAcceleration * dt * dt;
+        xPos = 2 * xPos - prevXPos + xAcceleration * dt * dt;
+        prevYPos = tempY;
+        prevXPos = tempX;
 
-			boundingBox = awesomeText.getBoundingClientRect()
-			if (boundingBox.x <= 0) {
-				xPos -= boundingBox.x;
-				prevXPos = xPos + 160;
-			}
+        awesomeText.style.top = yPos + "px";
+        awesomeText.style.right = xPos + "px";
 
-			if (boundingBox.x + awesomeText.offsetWidth >= window.screen.width) {
-				xPos += (boundingBox.x + awesomeText.offsetWidth - window.screen.width);
-				prevXPos = xPos - 180;
-			}
+        awesomeText.style.transform = "rotate(" + rotate + "deg)";
+        rotate += (3600 * dt) / 1000;
 
-			const tempY = yPos
-			const tempX = xPos
-			yPos = (2 * yPos) - prevYPos + (yAcceleration * dt * dt)
-			xPos = (2 * xPos) - prevXPos + (xAcceleration * dt * dt)
-			prevYPos = tempY
-			prevXPos = tempX
+        console.log(yPos);
+        console.log(prevYPos);
 
-			awesomeText.style.top = yPos + "px";
-			awesomeText.style.right = xPos + "px";
+        if (yPos <= 3000) {
+          setTimeout(() => requestAnimationFrame(epicFall), 10);
+        } else {
+          awesomeText.remove();
+          boringText.innerText = "watermelon";
+          boringText.classList.remove("select-none");
+          boringText.classList.remove("aria-hidden");
+          boringText.classList.remove("text-transparent");
+        }
+      }
+    </script>
 
+    <!-- matei's super cool idea generator -->
+    <div class="flex flex-col items-center">
+      <h2 class="text-5xl font-bold text-[#AEB2D5] font-shantell-sans mb-16">
+        Stuck for
+        <span
+          class="underline decoration-4 md:decoration-3 underline decoration-wavy underline-offset-8"
+          >ideas</span
+        >?
+      </h2>
+      <button
+        class="p-4 rounded-lg text-xl outline-2 outline-[#484C89] bg-[#1F213A] block w-fit mb-4 cursor-pointer transition duration-300 ease-in-out hover:bg-[#161729]"
+        id="generate-idea"
+      >
+        Generate Idea
+      </button>
+    </div>
+    <script>
+      function sleep(ms) {
+        return new Promise((resolve) => setTimeout(resolve, ms));
+      }
+      function getRandomUnsignedInteger(max) {
+        return Math.floor(Math.random() * max);
+      }
+      function getRandomSignedInteger(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+      }
+      function createLightBeam(colourHex) {
+        let lightBeam = document.createElement("div");
+        lightBeam.className = "h-dvh w-24 fixed top-0 z-102 light-beam";
+        lightBeam.style.backgroundColor = "#" + colourHex;
+        lightBeam.style.left =
+          getRandomUnsignedInteger(window.innerWidth - 50) + "px";
+        document.body.appendChild(lightBeam);
+      }
+      function createHorizontalLightBeam(colourHex) {
+        let lightBeam = document.createElement("div");
+        lightBeam.className =
+          "h-24 w-screen fixed left-0 z-102 horizontal-light-beam";
+        lightBeam.style.backgroundColor = "#" + colourHex;
+        lightBeam.style.top =
+          getRandomUnsignedInteger(window.innerHeight - 50) + "px";
+        document.body.appendChild(lightBeam);
+      }
+      const sendMeToTheMiddle = function () {};
+      let validColours = [
+        "FF0000A0",
+        "00FF00A0",
+        "0000FFA0",
+        "FFFF00A0",
+        "FF00FFA0",
+        "00FFFFA0",
+      ];
+      // get ready for the SUPER DUPER CINEMATIC IDEA GENERATOR!!! WOOHOO!!!!!!!!!!! :D :D :3 :P ^_^ xD
+      let superCinematicSong = new Audio(
+        "src/assets/462681_xKore_-_Event_Horizon.mp3"
+      );
+      superCinematicSong.preload = "auto";
+      document.querySelector("#generate-idea").addEventListener("click", () => {
+        superCinematicSong.currentTime = 25;
+        superCinematicSong.play();
+        const blackBackground = document.createElement("div");
+        blackBackground.className =
+          "fixed top-0 left-0 h-dvh w-screen bg-[#000] z-99 fade-in opacity-90";
+        document.body.appendChild(blackBackground);
+        const snailWrapper = document.createElement("div");
+        document.body.appendChild(snailWrapper);
+        const snail = document.createElement("img");
+        snail.src = "src/assets/snail.png";
+        snail.className =
+          "fixed -bottom-full left-1/2 -translate-x-1/2 translate-y-1/2 z-101";
+        snailWrapper.appendChild(snail);
+        sleep(5500).then(() => {
+          console.log("hi i'm a snail");
+          snail.classList.add("snail-initial-animation");
+        });
+        sleep(9000).then(() => {
+          console.log("aaaah why am i stretching its so painful");
+          snail.classList.add("snail-stretch-animation", "bottom-1/2");
+        });
+        sleep(11377).then(() => {
+          console.log("oooh fancy light show");
+          let count = 0;
+          let lightBeamLoop = setInterval(() => {
+            createLightBeam(
+              validColours[getRandomUnsignedInteger(validColours.length)]
+            );
+            count++;
+            if (count > 30) {
+              clearInterval(lightBeamLoop);
+            }
+          }, 353);
+        });
+        let spawnParticlesLoop; // it exists now.
+        sleep(11377).then(() => {
+          console.log(
+            "and particles... cool. i wonder how long this took the developer to make"
+          );
+          let particleSrcs = [
+            "src/particles/brain.png",
+            "src/particles/mateishomepage.png",
+            "src/particles/puzzle_solved.png",
+          ];
+          if (window.innerWidth > window.innerHeight) {
+            const spawnFromDistance = window.innerWidth;
+          } else {
+            const spawnFromDistance = window.innerHeight;
+          }
+          spawnParticlesLoop = setInterval(() => {
+            let particle = document.createElement("img");
+            particle.src =
+              particleSrcs[getRandomUnsignedInteger(particleSrcs.length)];
+            console.log("hi i'm a particle");
+            let fromWhichSide = getRandomUnsignedInteger(3);
+            let startTop, startLeft;
+            let centerTop = window.innerHeight / 2;
+            let centerLeft = window.innerWidth / 2;
+            if (fromWhichSide === 0) {
+              // left side :3
+              startLeft = -100;
+              startTop = getRandomUnsignedInteger(window.innerHeight);
+            } else if (fromWhichSide === 1) {
+              // right side :p
+              startLeft = window.innerWidth + 100;
+              startTop = getRandomUnsignedInteger(window.innerHeight);
+            } else if (fromWhichSide === 2) {
+              // top side ^_^
+              startTop = -100;
+              startLeft = getRandomUnsignedInteger(window.innerWidth);
+            } else {
+              // bottom side :P
+              startTop = window.innerHeight + 100;
+              startLeft = getRandomUnsignedInteger(window.innerWidth);
+            }
+            particle.className = "fixed z-100 particle";
+            particle.style.top = startTop + "px";
+            particle.style.left = startLeft + "px";
+            document.body.appendChild(particle);
+            setTimeout(() => {
+              particle.style.transition = "top 2.5s linear, left 2.5s linear";
+              particle.style.top = centerTop + "px";
+              particle.style.left = centerLeft + "px";
+            }, 10);
+          }, 25);
+        });
+        sleep(16847).then(() => {
+          console.log(
+            "woah the lights are going horizontally as well now. and at TWICE THE SPEED OMG"
+          );
+          let count = 0;
+          let horizontalLightBeamLoop = setInterval(() => {
+            createHorizontalLightBeam(
+              validColours[getRandomUnsignedInteger(validColours.length)]
+            );
+            count++;
+            if (count > 28) {
+              clearInterval(horizontalLightBeamLoop);
+            }
+          }, 176.5);
+        });
+        fetch("src/ideas.json")
+          .then((response) => response.text())
+          .then((data) => {
+            window.ideasJSON = data;
+          });
+        sleep(22200).then(() => {
+          clearInterval(spawnParticlesLoop);
+          let particles = Array.from(document.querySelectorAll(".particle"));
+          console.log(
+            "dam i spawned " +
+              particles.length +
+              " particles :O ok they're all going away now cya"
+          );
+          particles.forEach((particle) => {
+            particle.remove();
+          });
+          let lightBeams = Array.from(document.querySelectorAll(".light-beam"));
+          lightBeams.forEach((beam) => {
+            beam.remove();
+          });
+          let horizontalLightBeams = Array.from(
+            document.querySelectorAll(".horizontal-light-beam")
+          );
+          horizontalLightBeams.forEach((beam) => {
+            beam.remove();
+          });
+          let epicFireGif = document.createElement("img");
+          epicFireGif.src = "src/assets/fire.gif";
+          epicFireGif.className = "fixed left-0 bottom-0 w-screen h-1/2 z-99";
+          epicFireGif.style.objectFit = "fill";
+          document.body.appendChild(epicFireGif);
+          // now... for the idea
+          const ideas = JSON.parse(ideasJSON);
+          const idea = ideas[getRandomUnsignedInteger(ideas.length)];
+          console.log(idea);
+          let ideaText = document.createElement("div");
+          ideaText.innerText = idea;
+          ideaText.className =
+            "fixed z-100 font-shantell-sans text-5xl top-4/5 text-[#787AFA] font-bold";
+          document.body.appendChild(ideaText);
+          let instructionalText = document.createElement("div");
+          instructionalText.innerText =
+            "Press [ESC] or click on the snail to close.";
+          instructionalText.className = "text-xl";
+          ideaText.appendChild(instructionalText);
+          snail.addEventListener("click", () => {
+            snailWrapper.remove();
+            blackBackground.remove();
+            ideaText.remove();
+            epicFireGif.remove();
+            superCinematicSong.pause();
+          });
+          document.addEventListener("keydown", function (event) {
+            if (event.key === "Escape") {
+              snailWrapper.remove();
+              blackBackground.remove();
+              ideaText.remove();
+              epicFireGif.remove();
+              superCinematicSong.pause();
+            }
+          });
+        });
+      });
+    </script>
+    <!-- prize tiers -->
+    <div class="flex flex-col items-center">
+      <h1
+        class="text-5xl text-[#AEB2D5] mb-12 font-bold font-shantell-sans decoration-wavy decoration-4 md:decoration-3"
+      >
+        Prize tiers
+      </h1>
+      <div
+        class="w-104 h-12 relative bg-[#484C89] rounded-md overflow-clip"
+        id="rsvp-bar"
+      >
+        <div
+          style="clip-path: inset(0 calc((100 - var(--progress)) * 1%)) 0 0)"
+          class="text-xl w-full text-left p-4 h-12 align-top flex items-center absolute text-[#484C89] font-bold z-2 unlock-text"
+        >
+          Unlocks after 100 RSVPs :D
+        </div>
+        <div
+          style="clip-path: inset(0 0 0 calc(var(--progress) * 1%))"
+          class="text-xl w-full text-left aria-hidden p-4 absolute text-[#AEB2D5] h-12 flex items-center font-bold z-2 unlock-text select-none"
+        >
+          Unlocks after 100 RSVPs :D
+        </div>
 
-			awesomeText.style.transform = "rotate(" + rotate + "deg)"
-			rotate += 3600 * dt / 1000;
+        <div
+          class="absolute w-[calc(26rem*var(--progress)/100)] h-full bg-[#AEB2D5] rounded-md"
+        ></div>
+      </div>
+    </div>
+    <script>
+      function easeOutCubic(t) {
+        return 1 - Math.pow(1 - t, 3);
+      }
 
-			console.log(yPos)
-			console.log(prevYPos)
+      let start = null;
+      const rsvps = 21;
+      const duration = 2000;
+      const interval = 10;
+      let timeProgress = 0;
 
+      let unlockText = document.getElementsByClassName("unlock-text");
 
-			if (yPos <= 3000) {
-				setTimeout(() => requestAnimationFrame(epicFall), 10);
-			} else {
-				awesomeText.remove()
-				boringText.innerText = "watermelon"
-				boringText.classList.remove("select-none");
-				boringText.classList.remove("aria-hidden");
-				boringText.classList.remove("text-transparent");
+      function setUnlockText(text) {
+        for (var i = 0; i < unlockText.length; i++) {
+          unlockText[i].innerText = text;
+        }
+      }
 
-			}
-		}
-	</script>
+      function stepProgress(timestamp) {
+        if (!start) {
+          start = timestamp;
+        }
+        const elapsed = timestamp - start;
+        const timeProgress = Math.min(elapsed / duration, 1);
 
-	<!-- matei's super cool idea generator -->
-	<div class="flex flex-col items-center">
-		<h2 class="text-5xl font-bold text-[#AEB2D5] font-shantell-sans mb-8">
-			Stuck for <span
-				class="underline decoration-4 md:decoration-3 underline decoration-wavy underline-offset-8">ideas</span>?
-		</h2>
-		<button class="p-4 rounded-lg text-xl outline-2 outline-[#484C89] bg-[#1F213A] block w-fit mb-4 cursor-pointer transition duration-300 ease-in-out hover:bg-[#161729]"
-			id="generate-idea">Generate Idea</button>
-	</div>
-<script>
-		function sleep(ms) {
-			return new Promise(resolve => setTimeout(resolve, ms));
-		}
-		function getRandomUnsignedInteger(max) {
-			return Math.floor(Math.random() * max);
-		}
-		function getRandomSignedInteger(min, max) {
-			return Math.floor(Math.random() * (max - min + 1)) + min;
-		}
-		function createLightBeam(colourHex) {
-			let lightBeam = document.createElement('div');
-			lightBeam.className = 'h-dvh w-24 fixed top-0 z-102 light-beam';
-			lightBeam.style.backgroundColor = '#' + colourHex;
-			lightBeam.style.left = getRandomUnsignedInteger(window.innerWidth - 50) + 'px';
-			document.body.appendChild(lightBeam);
-		}
-		function createHorizontalLightBeam(colourHex) {
-			let lightBeam = document.createElement('div');
-			lightBeam.className = 'h-24 w-screen fixed left-0 z-102 horizontal-light-beam';
-			lightBeam.style.backgroundColor = '#' + colourHex;
-			lightBeam.style.top = getRandomUnsignedInteger(window.innerHeight - 50) + 'px';
-			document.body.appendChild(lightBeam);
-		}
-		const sendMeToTheMiddle = function() {
+        console.log(easeOutCubic(timeProgress));
 
-		}
-		let validColours = ['FF0000A0', '00FF00A0', '0000FFA0', 'FFFF00A0', 'FF00FFA0', '00FFFFA0'];
-		// get ready for the SUPER DUPER CINEMATIC IDEA GENERATOR!!! WOOHOO!!!!!!!!!!! :D :D :3 :P ^_^ xD
-		let superCinematicSong = new Audio('src/462681_xKore_-_Event_Horizon.mp3');
-		superCinematicSong.preload = 'auto';
-		document.querySelector('#generate-idea').addEventListener('click', () => {
-			superCinematicSong.currentTime = 25;
-			superCinematicSong.play();
-			const blackBackground = document.createElement('div');
-			blackBackground.className = "fixed top-0 left-0 h-dvh w-screen bg-[#000] z-99 fade-in opacity-90";
-			document.body.appendChild(blackBackground);
-			const snailWrapper = document.createElement('div');
-			document.body.appendChild(snailWrapper);
-			const snail = document.createElement('img');
-			snail.src = 'src/snail.png';
-			snail.className = 'fixed -bottom-full left-1/2 -translate-x-1/2 translate-y-1/2 z-101';
-			snailWrapper.appendChild(snail);
-			sleep(5500).then(() => {
-				console.log('hi i\'m a snail');
-				snail.classList.add('snail-initial-animation');
-			});
-			sleep(9000).then(() => {
-				console.log('aaaah why am i stretching its so painful');
-				snail.classList.add('snail-stretch-animation', 'bottom-1/2');
-			});
-			sleep(11377).then(() => {
-				console.log('oooh fancy light show');
-				let count = 0;
-				let lightBeamLoop = setInterval(() => {
-					createLightBeam(validColours[getRandomUnsignedInteger(validColours.length)]);
-					count++;
-					if (count > 30) {
-						clearInterval(lightBeamLoop);
-					}
-				}, 353);
-			});
-			let spawnParticlesLoop; // it exists now.
-			sleep(11377).then(() => {
-				console.log('and particles... cool. i wonder how long this took the developer to make');
-				let particleSrcs = ['src/particles/brain.png', 'src/particles/mateishomepage.png', 'src/particles/puzzle_solved.png'];
-				if (window.innerWidth > window.innerHeight) {
-					const spawnFromDistance = window.innerWidth;
-				} else {
-					const spawnFromDistance = window.innerHeight;
-				}
-				spawnParticlesLoop = setInterval(() => {
-					let particle = document.createElement('img');
-					particle.src = particleSrcs[getRandomUnsignedInteger(particleSrcs.length)];
-					console.log('hi i\'m a particle');
-					let fromWhichSide = getRandomUnsignedInteger(3);
-					let startTop, startLeft;
-					let centerTop = window.innerHeight / 2;
-					let centerLeft = window.innerWidth / 2;
-					if (fromWhichSide === 0) { // left side :3
-						startLeft = -100;
-						startTop = getRandomUnsignedInteger(window.innerHeight);
-					} else if (fromWhichSide === 1) { // right side :p
-						startLeft = window.innerWidth + 100;
-						startTop = getRandomUnsignedInteger(window.innerHeight);
-					} else if (fromWhichSide === 2) { // top side ^_^
-						startTop = -100;
-						startLeft = getRandomUnsignedInteger(window.innerWidth);
-					} else { // bottom side :P
-						startTop = window.innerHeight + 100;
-						startLeft = getRandomUnsignedInteger(window.innerWidth);
-					}
-					particle.className = 'fixed z-100 particle';
-					particle.style.top = startTop + 'px';
-					particle.style.left = startLeft + 'px';
-					document.body.appendChild(particle);
-					setTimeout(() => {
-						particle.style.transition = 'top 2.5s linear, left 2.5s linear';
-						particle.style.top = centerTop + 'px';
-						particle.style.left = centerLeft + 'px';
-					}, 10);
-				}, 25);
-			});
-			sleep(16847).then(() => {
-				console.log('woah the lights are going horizontally as well now. and at TWICE THE SPEED OMG');
-				let count = 0;
-				let horizontalLightBeamLoop = setInterval(() => {
-					createHorizontalLightBeam(validColours[getRandomUnsignedInteger(validColours.length)]);
-					count++;
-					if (count > 28) {
-						clearInterval(horizontalLightBeamLoop);
-					}
-				}, 176.5);
-			});
-			fetch('src/ideas.json')
-				.then(response => response.text())
-				.then(data => {
-					window.ideasJSON = data;
-				});
-			sleep(22200).then(() => {
-				clearInterval(spawnParticlesLoop);
-				let particles = Array.from(document.querySelectorAll('.particle'));
-				console.log('dam i spawned ' + particles.length + ' particles :O ok they\'re all going away now cya');
-				particles.forEach((particle) => {
-					particle.remove();
-				});
-				let lightBeams = Array.from(document.querySelectorAll('.light-beam'));
-				lightBeams.forEach((beam) => {
-					beam.remove();
-				})
-				let horizontalLightBeams = Array.from(document.querySelectorAll('.horizontal-light-beam'));
-				horizontalLightBeams.forEach((beam) => {
-					beam.remove();
-				})
-				let epicFireGif = document.createElement('img');
-				epicFireGif.src = 'src/fire.gif';
-				epicFireGif.className = 'fixed left-0 bottom-0 w-screen h-1/2 z-99';
-				epicFireGif.style.objectFit = 'fill';
-				document.body.appendChild(epicFireGif);
-				// now... for the idea
-				const ideas = JSON.parse(ideasJSON);
-				const idea = ideas[getRandomUnsignedInteger(ideas.length)];
-				console.log(idea);
-				let ideaText = document.createElement('div');
-				ideaText.innerText = idea;
-				ideaText.className = "fixed z-100 font-shantell-sans text-5xl top-4/5 text-[#787AFA] font-bold";
-				document.body.appendChild(ideaText);
-				let instructionalText = document.createElement('div');
-				instructionalText.innerText = 'Press [ESC] or click on the snail to close.';
-				instructionalText.className = 'text-xl';
-				ideaText.appendChild(instructionalText);
-				snail.addEventListener('click', (() => {
-					snailWrapper.remove();
-					blackBackground.remove();
-					ideaText.remove();
-					epicFireGif.remove();
-					superCinematicSong.pause();
-				}));
-				document.addEventListener('keydown', function(event) {
-					if (event.key === "Escape") {
-						snailWrapper.remove();
-						blackBackground.remove();
-						ideaText.remove();
-						epicFireGif.remove();
-						superCinematicSong.pause();
-					}
-				});
-			});
-		});
-	</script>
-	<!-- prize tiers -->
-	<div class="flex flex-col items-center ">
-		<h1
-			class="text-5xl text-[#AEB2D5] mb-8 font-bold font-shantell-sans  decoration-wavy decoration-4 md:decoration-3">
-			Prize tiers</h1>
-		<div class="w-104 h-12 relative bg-[#484C89] rounded-md overflow-clip" id="rsvp-bar">
-			<div style="clip-path: inset(0 calc((100 - var(--progress)) * 1%)) 0 0)"
-				class="text-xl w-full text-left p-4 h-12 align-top flex items-center absolute text-[#484C89] font-bold z-2 unlock-text">
-				Unlocks
-				after 100
-				RSVPs :D
-			</div>
-			<div style="clip-path: inset(0 0 0 calc(var(--progress) * 1%))"
-				class="text-xl w-full text-left aria-hidden p-4 absolute text-[#AEB2D5] h-12 flex items-center font-bold z-2 unlock-text select-none">
-				Unlocks after 100 RSVPs :D</div>
+        const progress = easeOutCubic(timeProgress) * rsvps;
 
-			<div class="absolute w-[calc(26rem*var(--progress)/100)] h-full bg-[#AEB2D5] rounded-md">
-			</div>
-		</div>
-	</div>
-	<script>
-		function easeOutCubic(t) {
-			return 1 - Math.pow(1 - t, 3);
-		}
+        document.documentElement.style.setProperty("--progress", progress);
+        setUnlockText(
+          "Unlocks after 100 RSVPs :D (" + Math.round(progress) + " so far!)"
+        );
 
-		let start = null;
-		const rsvps = 21;
-		const duration = 2000;
-		const interval = 10;
-		let timeProgress = 0;
+        if (elapsed < duration) {
+          setTimeout(() => requestAnimationFrame(stepProgress), interval);
+        }
+      }
 
-		let unlockText = document.getElementsByClassName("unlock-text")
+      const rsvpBar = document.getElementById("rsvp-bar");
 
-		function setUnlockText(text) {
-			for (var i = 0; i < unlockText.length; i++) {
-				unlockText[i].innerText = text;
-			}
-		}
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            requestAnimationFrame(stepProgress);
 
-		function stepProgress(timestamp) {
-			if (!start) {
-				start = timestamp;
-			}
-			const elapsed = timestamp - start;
-			const timeProgress = Math.min(elapsed / duration, 1);
+            observer.unobserve(entry.target);
+          }
+        });
+      });
 
-			console.log(easeOutCubic(timeProgress))
-
-			const progress = easeOutCubic(timeProgress) * rsvps
-
-			document.documentElement.style.setProperty("--progress", progress)
-			setUnlockText("Unlocks after 100 RSVPs :D (" + Math.round(progress) + " so far!)")
-
-
-
-			if (elapsed < duration) {
-				setTimeout(() => requestAnimationFrame(stepProgress), interval);
-			}
-		}
-
-		const rsvpBar = document.getElementById('rsvp-bar');
-
-		const observer = new IntersectionObserver((entries, observer) => {
-			entries.forEach(entry => {
-				if (entry.isIntersecting) {
-					requestAnimationFrame(stepProgress)
-
-					observer.unobserve(entry.target);
-				}
-			});
-		});
-
-		observer.observe(rsvpBar);
-	</script>
-
-
-</body>
-
+      observer.observe(rsvpBar);
+    </script>
+  </body>
 </html>

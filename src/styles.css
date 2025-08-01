@@ -1,17 +1,14 @@
 @import "tailwindcss";
 
 :root {
-	--progress: 0;
+  --progress: 0;
 }
 
 .font-shantell-sans {
-    font-family: "Shantell Sans", cursive;
-    font-optical-sizing: auto;
-    font-style: normal;
-    font-variation-settings:
-        "BNCE" 0,
-        "INFM" 30,
-        "SPAC" 0;
+  font-family: "Shantell Sans", cursive;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-variation-settings: "BNCE" 0, "INFM" 30, "SPAC" 0;
 }
 
 .font-nunito {
@@ -22,19 +19,28 @@
 }
 
 @keyframes spin3D {
-  from { transform: rotateY(180deg) rotateZ(10deg) }
-  to { transform: rotateY(540deg) rotateZ(10deg)}
+  from {
+    transform: rotateY(180deg) rotateZ(10deg);
+  }
+  to {
+    transform: rotateY(540deg) rotateZ(10deg);
+  }
 }
 
-.spin-3d { transform-style: preserve-3d;
-	animation: spin3D 1.95s linear infinite; 
+.spin-3d {
+  transform-style: preserve-3d;
+  animation: spin3D 1.95s linear infinite;
 }
 
 /* the cool fancy animations for the idea generator */
 
 @keyframes fade {
-  from { opacity: 0; }
-  to { opacity: 0.9; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.9;
+  }
 }
 
 .fade-in {
