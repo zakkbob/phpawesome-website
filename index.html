@@ -160,7 +160,7 @@
         const dt = timestamp - prevTime;
         prevTime = timestamp;
 
-        boundingBox = awesomeText.getBoundingClientRect();
+        let boundingBox = awesomeText.getBoundingClientRect();
         if (boundingBox.x <= 0) {
           xPos -= boundingBox.x;
           prevXPos = xPos + 160;
@@ -242,7 +242,6 @@
           getRandomUnsignedInteger(window.innerHeight - 50) + "px";
         document.body.appendChild(lightBeam);
       }
-      const sendMeToTheMiddle = function () {};
       let validColours = [
         "FF0000A0",
         "00FF00A0",
@@ -301,11 +300,6 @@
             "src/particles/mateishomepage.png",
             "src/particles/puzzle_solved.png",
           ];
-          if (window.innerWidth > window.innerHeight) {
-            const spawnFromDistance = window.innerWidth;
-          } else {
-            const spawnFromDistance = window.innerHeight;
-          }
           spawnParticlesLoop = setInterval(() => {
             let particle = document.createElement("img");
             particle.src =
